@@ -1,0 +1,25 @@
+<idea-plugin>
+    <id>dev.nazimaraz.realblack</id>
+    <name>Real Black</name>
+    <version>1.0.0</version>
+    <vendor>Nazım Araz</vendor>
+    <idea-version since-build="241"/>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.clion</depends>
+
+    <description><![CDATA[
+        <p>A real-black CLion theme with an Islands Dark-inspired IDE shell and a custom C++ editor color scheme.</p>
+        <p>It keeps the editor pitch black while giving tool windows, settings, lists, and popups a black Islands-style shell.</p>
+    ]]></description>
+
+    <change-notes><![CDATA[
+        <p>First stable open-source release of Real Black for CLion.</p>
+    ]]></change-notes>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <themeProvider id="dev.nazimaraz.realblack.ui" path="/themes/RealBlack.theme.json"/>
+        <bundledColorScheme id="Real Black" path="/schemes/RealBlack"/>
+        <annotator language="C++" implementationClass="dev.nazimaraz.realblack.BlackCppKeywordAnnotator"/>
+        <annotator language="ObjectiveC" implementationClass="dev.nazimaraz.realblack.BlackCppKeywordAnnotator"/>
+    </extensions>
+</idea-plugin>
